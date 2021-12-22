@@ -33,6 +33,18 @@ class Utils(commands.Cog):
     em.set_footer(text="Collaby! By Bot Republic")
     await ctx.send(embed = em, view=view)
 
+  @commands.command(pass_context=True)
+  @commands.has_permissions(administrator=True)
+  async def clean(ctx, limit: int):
+          await ctx.channel.purge(limit=limit)
+          await ctx.send('Cleared by {}'.format(ctx.author.mention))
+          await ctx.message.delete()
+
+  @clean.error
+  async def clear_error(ctx, error):
+      if isinstance(error, commands.MissingPermissions):
+          await ctx.send("You cant do that!")
+
   @commands.command()
   @commands.has_permissions(manage_guild=True)
   async def reload(self, ctx):
