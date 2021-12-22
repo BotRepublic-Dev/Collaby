@@ -1,4 +1,5 @@
 import discord
+import os
 from discord import embeds
 from discord.flags import alias_flag_value
 from discord.interactions import Interaction
@@ -15,7 +16,6 @@ from discord.ext.commands.core import command
 from discord.ui import Button, View, Select, view
 from discord.ui.button import button
 from os import scandir
-import os
 
 class About(commands.Cog):
 
