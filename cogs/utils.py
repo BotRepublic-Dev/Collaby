@@ -33,8 +33,17 @@ class Utils(commands.Cog):
     em.set_footer(text="Collaby! By Bot Republic")
     await ctx.send(embed = em, view=view)
 
-
-
+  @commands.command()
+  @commands.has_permissions(manage_guild=True)
+  async def reload(self, ctx):
+          await ctx.send("Reloading cogs")
+          for ext in os.listdir("./cogs/"):
+              if ext.endswith(".py") and not ext.startswith("_"):
+                  try:
+                      self.bot.unload_extension(f"cogs.{ext[:-3]}")
+                      self.bot.load_extension(f"cogs.{ext[:-3]}")
+                  except:
+                      await ctx.send("Could not reload all extensions.")
 
 def setup(bot):
   bot.add_cog(Utils(bot))
