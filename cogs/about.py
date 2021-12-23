@@ -27,7 +27,7 @@ class About(commands.Cog):
     button = Button(label="About Me!", style=discord.ButtonStyle.green, emoji="<:collaby:921854424224268298>" , url="https://www.botrepublic.itzfinleyplayz.org/collaby")
     view = View()
     view.add_item(button)
-    em = discord.Embed(title="About", color=ctx.guild.me.color, timestamp=datetime.utcnow())
+    em = discord.Embed(title="About", color=ctx.author.color, timestamp=datetime.utcnow())
     em.add_field(name="Python version", value=platform.python_version(), inline=True)
     await ctx.send(embed = em, view=view)
 
@@ -36,7 +36,7 @@ class About(commands.Cog):
     button = Button(label="About Bot Republic", style=discord.ButtonStyle.green, emoji="<:botrepublic:923167015395553321>" , url="https://www.botrepublic.itzfinleyplayz.org")
     view = View()
     view.add_item(button)
-    em = discord.Embed(title="Bot Republic!", color=ctx.guild.me.color, timestamp=datetime.utcnow())
+    em = discord.Embed(title="Bot Republic!", color=ctx.author.color, timestamp=datetime.utcnow())
     em.add_field(name= "About Us!", value="A few unknown bots found an empty land and decided to make it their own. They build servers, communities and a country. Bot Republic was born. Bot Republic was founded on 19/12/21 by ThePolarDeveloper! With The Following Owners/Developers Cobalt and ItzFinleyPlayz!")
     await ctx.send(embed = em, view=view)
 
