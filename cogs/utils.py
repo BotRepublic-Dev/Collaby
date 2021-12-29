@@ -15,7 +15,7 @@ from discord.components import Button, SelectOption
 from discord.ext.commands.core import command
 from discord.ui import Button, View, Select, view
 from discord.ui.button import button
-from os import scandir
+from os import name, scandir
 
 
 
@@ -61,6 +61,8 @@ class Utils(commands.Cog):
                       self.bot.load_extension(f"cogs.{ext[:-3]}")
                   except:
                       await ctx.send("Could not reload all extensions.")
+
+
 
 def setup(bot):
   bot.add_cog(Utils(bot))

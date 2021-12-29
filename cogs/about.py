@@ -22,7 +22,7 @@ class About(commands.Cog):
   def __init__(self, bot):
         self.bot = bot
 
-  @commands.command(name="about")
+  @commands.command(name="jfjf")
   async def about(self, ctx):
     button = Button(label="About Me!", style=discord.ButtonStyle.green, emoji="<:collaby:921854424224268298>" , url="https://www.botrepublic.itzfinleyplayz.org/collaby")
     view = View()

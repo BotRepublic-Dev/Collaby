@@ -51,7 +51,7 @@ class Moderation(commands.Cog):
     await member.unban(reason=reason)
     await ctx.send(f"{member.mention} was unbanned for ``{reason}``")
 
- 
+
 
 def setup(bot):
   bot.add_cog(Moderation(bot))
