@@ -32,4 +32,5 @@ async def on_ready():
     print(f'With ID: {bot.user.id}')
 
 
+
 bot.run(TOKEN)
