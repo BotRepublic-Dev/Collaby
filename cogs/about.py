@@ -22,7 +22,7 @@ class About(commands.Cog):
   def __init__(self, bot):
         self.bot = bot
 
-  @commands.command(name="jfjf")
+  @commands.command(name="about")
   async def about(self, ctx):
     button = Button(label="About Me!", style=discord.ButtonStyle.green, emoji="<:collaby:921854424224268298>" , url="https://www.botrepublic.itzfinleyplayz.org/collaby")
     view = View()
@@ -39,6 +39,13 @@ class About(commands.Cog):
     em = discord.Embed(title="Bot Republic!", color=ctx.author.color, timestamp=datetime.utcnow())
     em.add_field(name= "About Us!", value="A few unknown bots found an empty land and decided to make it their own. They build servers, communities and a country. Bot Republic was born. Bot Republic was founded on 19/12/21 by ThePolarDeveloper! With The Following Owners/Developers Cobalt and ItzFinleyPlayz!")
     await ctx.send(embed = em, view=view)
+
+  @commands.command()
+  async def serverstats(self, ctx):
+   em = discord.Embed(title=f"Server Stats For {ctx.guild.name}")
+   em.add_field(name = "Users:", value = ctx.guild.member_count, inline = False)
+   em.add_field(name = "Channels:", value = ctx.guild.channels, inline = False)
+   await ctx.send(embed=em)
 
 def setup(bot):
   bot.add_cog(About(bot))
